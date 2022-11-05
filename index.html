@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/04cd54677b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Youtube</title>
+    <style>
+      * {
+        font-family: Roboto;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #191818;
+        color: white;
+      }
+      .navbar {
+        background-color: #202020;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-evenly;
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .left > img {
+        height: 25px;
+        cursor: pointer;
+      }
+      .mid {
+        display: flex;
+      }
+      input {
+        padding: 10px;
+        background-color: #121212;
+        width: 500px;
+        border: none;
+        border: 1px solid #313131;
+        color: white;
+      }
+      input:focus {
+        outline: none;
+      }
+      .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #313131;
+        padding: 15px 20px;
+        cursor: pointer;
+      }
+      .search > i {
+        color: white;
+      }
+      #searchRslt {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-top: 20px;
+        margin: auto;
+        padding: 20px;
+      }
+      #searchRslt > div > img{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body onload="load()">
+    <div class="navbar">
+      <div class="left">
+        <i class="fa-solid fa-bars"></i>
+        <img src="https://i.im.ge/2022/08/09/FHFLKJ.logo.png" onclick="home()" />
+      </div>
+      <div class="mid">
+        <input type="text" id="query" placeholder="Search" />
+        <div class="search" onclick="getData()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+      <div class="right">
+        <input type="text" placeholder="Filter by channel name" id="filter" oninput="filterFn()">
+      </div>
+    </div>
+    <div id="searchRslt"></div>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
